@@ -1,4 +1,5 @@
 import random
+import math
 
 from params import p
 from params import g
