@@ -6,6 +6,8 @@ from params import g
 def keygen():
     sk = 0
     pk = 0
+    sk = random.randint(1, (p-1)/2)
+    pk = (g ** sk ) % p
     return pk,sk
 
 def encrypt(pk,m):
