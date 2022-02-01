@@ -14,6 +14,10 @@ def keygen():
 def encrypt(pk,m):
     c1 = 0
     c2 = 0
+    r = random.randint(1, (p-1)/2)
+    c1 = pow(g,r, mod = p)
+    c2 = m * pow(h,r)
+    c2 = pow(c2, 1, mod = p)
     return [c1,c2]
 
 def decrypt(sk,c):
