@@ -1,5 +1,5 @@
 import random
-import math
+
 
 from params import p
 from params import g
@@ -8,7 +8,7 @@ def keygen():
     sk = 0
     pk = 0
     sk = random.randint(1, (p-1)/2)
-    pk = math.fmod(pow(g, sk), p)
+    pk = pow(g, sk, mod = p)
     return pk,sk
 
 def encrypt(pk,m):
